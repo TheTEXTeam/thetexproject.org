@@ -1,0 +1,63 @@
+<header class="relative border-b-2">
+  <nav>
+    <div class="main-layout min-h-16 nd:h-16 mx-auto flex justify-between align-stretch">
+      <div id="logo" class="flex items-center text-blue-600 font-bold">
+        <a class="text-xl" href="/"
+          ><img
+            width="150"
+            loading="lazy"
+            src="/assets/title-logo.png"
+            alt="The TEX Project logo"
+          /></a
+        >
+      </div>
+      <ul
+        id="nav-links"
+        class="hidden gap-4 text-xl md:text-base font-semibold absolute top-16 right-4 bg-[#EEEEEE] rounded-lg w-60 py-8 shadow-xl border-2 border-slate-300 md:border-none md:shadow-none md:py-0 md:w-max md:bg-transparent md:flex md:static md:items-center md:rounded-none"
+      >
+        <li>
+          <a
+            class="w-full py-3 flex md:items-center pl-6 md:pl-4 pr-4 hover:bg-[#ececec] md:py-2 md:rounded-lg"
+            href="/programmes">Learn</a
+          >
+        </li>
+        <li>
+          <a
+            class="w-full py-3 flex md:items-center pl-6 md:pl-4 pr-4 hover:bg-[#ececec] md:py-2 md:rounded-lg"
+            href="/organization">About</a
+          >
+        </li>
+      </ul>
+      <div class="md:hidden flex items-center">
+        <button id="menu-button" class="p-1 rounded-full focus:outline-none">
+          <svg class="fill-current h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+            <path id="menu-icon" d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  let menuOpen = false;
+  const menuButton = document.getElementById("menu-button");
+  const menuIcon = document.getElementById("menu-icon");
+  const navLinks = document.getElementById("nav-links");
+
+  function handleMenuButtonClick() {
+    if (menuOpen === false) {
+      navLinks?.classList.replace("hidden", "grid");
+      menuIcon?.setAttribute(
+        "d",
+        "M10 8.586L2.929 1.515 1.515 2.929 8.586 10l-7.071 7.071 1.414 1.414L10 11.414l7.071 7.071 1.414-1.414L11.414 10l7.071-7.071-1.414-1.414L10 8.586z"
+      );
+      menuOpen = true;
+    } else {
+      navLinks?.classList.replace("grid", "hidden");
+      menuIcon?.setAttribute("d", "M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z");
+      menuOpen = false;
+    }
+  }
+  menuButton?.addEventListener("click", handleMenuButtonClick);
+</script>
