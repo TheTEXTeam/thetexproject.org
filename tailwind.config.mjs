@@ -4,15 +4,14 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        Fraunces: ["Fraunces", "sans-serif"],
+        Orbitron: ["Orbitron", "sans-serif"],
         PlusJakartaSans: ["PlusJakartaSans", "sans-serif"],
       },
       colors: {
-        bodyColor: "#FAFAFA",
-        textPrimary: "#242425",
-        themePrimary: "#FBD570",
-        themeSecondary: "#B7B4ED",
-        topicTag: "#ecebfd",
+        bodyColor: "#18181B",
+        textPrimary: "#FFFFFF",
+        textSecondary: "#97979F",
+        themePrimary: "#33CB94",
       },
     },
   },
