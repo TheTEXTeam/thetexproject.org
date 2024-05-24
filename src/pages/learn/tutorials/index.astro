@@ -1,0 +1,28 @@
+---
+import CoursesCard from "@/components/CoursesCard.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+const tutorialsBasicData = await getCollection("tutorialsBasicData");
+const pageTitle = "Tutorials";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <section class="pt-20">
+    <div class="main-layout">
+      <div class="mb-16">
+        <h2 class="font-Orbitron text-4xl font-bold text-center mb-3">Browse Our Tutorials</h2>
+        <p class="font-semibold text-center mb-4 tracking-wider text-textSecondary">
+          We have some of the best tutorials in the world
+        </p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-4 mb-12">
+        {
+          tutorialsBasicData.map(({ data }) => {
+            return <CoursesCard tutorialData={data} />;
+          })
+        }
+      </div>
+    </div>
+  </section>
+</BaseLayout>

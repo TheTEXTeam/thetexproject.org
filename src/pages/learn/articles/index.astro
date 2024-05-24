@@ -1,0 +1,32 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import ArticlesCard from "@/components/ArticlesCard.astro";
+import { getCollection } from "astro:content";
+import { filterArticles } from "@/libs/utils";
+
+const allArticlesFresh = await getCollection("articles");
+const allArticles = await filterArticles(allArticlesFresh, "recent", null);
+const pageTitle = "Articles";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <section class="pt-20">
+    <div class="main-layout">
+      <div class="mb-16">
+        <h2 class="font-Orbitron text-4xl font-bold text-center mb-3">Recent Articles</h2>
+        <p class="font-semibold text-center mb-4 tracking-wider text-textSecondary">
+          The TEX Project offers variety of learning style to make sure you get the best of us!
+        </p>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="grid gap-5 max-w-[50rem] mx-auto mb-12 px-4">
+      {
+        allArticles.map(({ data }) => {
+          return <ArticlesCard articleData={data} />;
+        })
+      }
+    </div>
+  </section>
+</BaseLayout>

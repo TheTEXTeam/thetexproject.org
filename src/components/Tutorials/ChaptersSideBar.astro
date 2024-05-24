@@ -1,0 +1,90 @@
+---
+import { getCollection } from "astro:content";
+
+const { currentTutorial } = Astro.props;
+const allTutorialsBasicData = await getCollection("tutorialsBasicData");
+const allTutorials = await getCollection("tutorials");
+
+const tutorial = allTutorials.filter(({ data }) => data.tutorialName === currentTutorial);
+const tutorialBasicData = allTutorialsBasicData.find(({ data }) => data.name === currentTutorial);
+console.log(allTutorials);
+---
+
+<label
+  for="navigation"
+  class="fixed bottom-0 left-0 z-50 flex items-center justify-center w-14 h-14 mb-4 ml-4 bg-themePrimary rounded-full shadow-xl cursor-pointer text-bodyColor lg:hidden transition duration-200 ease-in-out active:scale-95"
+>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-6 h-6"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+    stroke-width="2"
+  >
+    <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16"></path>
+  </svg>
+</label>
+<input type="checkbox" name="navigation" id="navigation" class="hidden peer" />
+<div
+  class="fixed top-[3.5rem] h-screen shadow-xl pl-8 left-0 hidden peer-checked:block lg:relative lg:top-0 lg:h-auto lg:block lg:flex-none lg:shadow-none"
+>
+  <div
+    class="absolute inset-y-0 right-0 w-[60vw] bg-[#1D1D20] lg:bg-transparent border-r-2 border-[#343437] lg:border-none"
+  >
+  </div>
+  <nav class="sticky top-[4.5rem] w-[60vw] sm:w-full text-base lg:text-sm">
+    <ul
+      role="list"
+      class="-ml-0.5 h-[calc(100vh-4.5rem)] sm:w-[16rem] overflow-y-auto pt-7 pb-32 pl-0.5 pr-8 space-y-8 overflow-auto"
+    >
+      {
+        tutorialBasicData?.data.chapters.map((chapter) => {
+          return (
+            <li>
+              <h3 class="font-semibold tracking-tight">{chapter}</h3>
+              <ul role="list" class="pl-3 mt-3 space-y-2">
+                {tutorial.map(({ data }) => {
+                  return (
+                    <li>
+                      <a
+                        href={`/learn/tutorials/${data.url}`}
+                        class="text-textSecondary hover:text-themePrimary"
+                      >
+                        {data.chapter === chapter && data.title}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </nav>
+</div>
+
+<!-- <li>
+  <h3 class="font-semibold tracking-tight">{chapter}</h3>
+  <ul role="list" class="pl-3 mt-3 space-y-2">
+    <>
+      <li>
+        <a
+          href="/docs/create-edit-content-types"
+          class="text-textSecondary hover:text-themePrimary"
+        >
+          Create and edit content types?
+        </a>
+      </li>
+      <li>
+        <a
+          href="/docs/what-are-content-types"
+          class="text-textSecondary hover:text-themePrimary"
+        >
+          What are content types?
+        </a>
+      </li>
+    </>
+  </ul>
+</li> -->

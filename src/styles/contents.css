@@ -1,0 +1,33 @@
+/* Tutorial Content Styling */
+.content > h2 {
+  @apply text-2xl font-bold;
+}
+
+.content > p {
+  @apply leading-8 font-medium text-textContent;
+}
+
+.content > a {
+  @apply text-textPrimary;
+}
+
+.content > ul {
+  @apply list-none ml-10;
+}
+
+.content > ol {
+  margin-bottom: 0.5em;
+  margin-left: 2.5em;
+}
+
+.content > li {
+  margin-bottom: 0.5em;
+}
+
+.content > pre code {
+  font-family: "IBM Plex Mono", monospace !important;
+}
+
+.content > blockquote {
+  @apply bg-[#1D1D20] border-2 border-[#343437] p-4 border-l-8 border-l-emerald-400;
+}

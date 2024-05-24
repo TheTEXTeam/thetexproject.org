@@ -1,0 +1,33 @@
+---
+import { formatDate } from "@/libs/utils.js";
+
+const { articleData } = Astro.props;
+---
+
+<a
+  class="bg-[#1D1D20] border-2 border-[#343437] rounded-xl transition-all hover:scale-[1.02] duration-100"
+  href={`/learn/articles/${articleData.url}`}
+>
+  <div class="py-3 px-6 border-b-2 border-[#343437]">
+    <time datetime="2024-5-10" class="text-textSecondary font-medium text-sm"
+      >{formatDate(articleData.pubDate)}</time
+    >
+  </div>
+  <div class="p-6">
+    <h2 class="text-3xl sm:text-4xl font-extrabold mb-4">{articleData.title}</h2>
+    <p class="font-medium text-textSecondary">
+      {articleData.description}
+    </p>
+    <div class="mt-6 flex flex-wrap gap-4">
+      {
+        articleData.topics.map((topic) => {
+          return (
+            <span class="w-max py-2 px-4 rounded-lg bg-emerald-400/10 text-emerald-400">
+              {topic}
+            </span>
+          );
+        })
+      }
+    </div>
+  </div>
+</a>
