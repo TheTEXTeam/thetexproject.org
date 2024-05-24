@@ -1,0 +1,37 @@
+<div class="bg-[#1D1D20] border-2 border-[#343437] max-w-[50rem] mx-auto rounded-xl">
+  <button
+    class="py-5 px-6 flex gap-2 items-center w-full font-semibold text-left md:text-lg"
+    aria-expanded="false"
+    onclick="toggleInfo(this)"
+  >
+    <slot name="label" />
+    <svg
+      class="flex-shrink-0 w-4 h-4 ml-auto fill-current"
+      viewBox="0 0 16 16"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <rect
+        y="7"
+        width="16"
+        height="2"
+        rx="1"
+        class="transform origin-center transition duration-200 ease-out false"></rect>
+      <rect
+        y="7"
+        width="16"
+        height="2"
+        rx="1"
+        class="transform origin-center rotate-90 transition duration-200 ease-out false"></rect>
+    </svg>
+  </button>
+  <div
+    class="md:transition-all md:duration-300 md:ease-in-out max-h-0 overflow-hidden"
+    style="transition: max-height 0.3s ease-in-out 0s;"
+  >
+    <div
+      class="bg-[#ffffff14] grid gap-4 p-6 leading-relaxed min-h-max overflow-x-scroll sm:overflow-x-hidden rounded-b-lg"
+    >
+      <slot name="content" />
+    </div>
+  </div>
+</div>

@@ -1,6 +1,6 @@
 ---
 import { getCollection } from "astro:content";
-import CoursesCard from "../CoursesCard.astro";
+import TutorialsCard from "../TutorialsCard.astro";
 
 const tutorialsBasicData = await getCollection("tutorialsBasicData");
 ---
@@ -16,7 +16,7 @@ const tutorialsBasicData = await getCollection("tutorialsBasicData");
     <div class="grid md:grid-cols-3 gap-4 mb-12">
       {
         tutorialsBasicData.map(({ data }) => {
-          return <CoursesCard tutorialData={data} />;
+          return <TutorialsCard tutorialData={data} />;
         })
       }
     </div>

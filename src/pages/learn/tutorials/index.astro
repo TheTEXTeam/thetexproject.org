@@ -1,5 +1,5 @@
 ---
-import CoursesCard from "@/components/CoursesCard.astro";
+import TutorialsCard from "@/components/TutorialsCard.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
@@ -19,7 +19,7 @@ const pageTitle = "Tutorials";
       <div class="grid md:grid-cols-3 gap-4 mb-12">
         {
           tutorialsBasicData.map(({ data }) => {
-            return <CoursesCard tutorialData={data} />;
+            return <TutorialsCard tutorialData={data} />;
           })
         }
       </div>

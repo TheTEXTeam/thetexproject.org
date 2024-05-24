@@ -7,16 +7,15 @@ import "@/styles/contents.css";
 
 export async function getStaticPaths() {
   const allTutorialData = await getCollection("tutorials");
-  const tutorialsBasicDataFresh = await getCollection("tutorialsBasicData");
   return allTutorialData.map((tutorialData) => {
     return {
       params: { slug: tutorialData.data.url },
-      props: { tutorialData, tutorialsBasicDataFresh },
+      props: { tutorialData },
     };
   });
 }
 
-const { tutorialData, tutorialsBasicDataFresh } = Astro.props;
+const { tutorialData } = Astro.props;
 
 const { Content } = await tutorialData.render();
 const pageTitle = `${tutorialData.data.title} - ${tutorialData.data.tutorialName}`;

@@ -1,0 +1,38 @@
+---
+const { tutorialData } = Astro.props;
+const level = tutorialData.level;
+---
+
+<a
+  class="bg-[#1D1D20] border-2 border-[#343437] rounded-xl shadow-sm hover:shadow-md transition-all hover:scale-[1.02] duration-100 h-max"
+  href={`/learn/tutorials/${tutorialData.url}`}
+>
+  <div class="p-8">
+    <div>
+      <img class="mb-4" src={`/contents/logo/${tutorialData.icon}.svg`} alt="icon" />
+    </div>
+    <h2 class="mb-3 text-2xl font-bold">{tutorialData.name}</h2>
+    <p class="font-medium text-textSecondary">
+      {tutorialData.description}
+    </p>
+  </div>
+  <div
+    class=`py-3 px-8 border-t-2 border-[#343437] flex rounded-b-xl 
+    ${level == "Beginner" && 'bg-emerald-400/10 text-emerald-400'}
+    ${level == "Intermediate" && 'bg-[#fbd67033] text-yellow-300'}
+    ${level == "Advanced" && 'bg-[#fb707033] text-red-300'}
+  `
+  >
+    <svg
+      class="my-auto mr-2"
+      xmlns="http://www.w3.org/2000/svg"
+      width="1em"
+      height="1em"
+      viewBox="0 0 32 32"
+    >
+      <rect width="32" height="32" fill="none"></rect>
+      <path fill="currentColor" d="M30 30h-8V4h8zm-10 0h-8V12h8zm-10 0H2V18h8z"></path>
+    </svg>
+    <p class="font-semibold">{tutorialData.level}</p>
+  </div>
+</a>
