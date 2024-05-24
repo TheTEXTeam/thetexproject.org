@@ -23,7 +23,7 @@ const pageTitle = "About";
   <section>
     <div class="grid gap-4 mb-20 max-w-[50rem] mx-auto px-6">
       <div class="h-max rounded-2xl py-8 px-6 bg-[#1D1D20] border-2 border-[#343437]">
-        <h3 class="text-3xl font-bold mb-4">History</h3>
+        <h2 class="text-3xl font-bold mb-4">History</h2>
         <p class="text-textSecondary font-medium">
           All our resources and projects are fully open-source, meaning anyone can access, use, and
           contribute to our repository. This collaborative approach ensures that our content is
@@ -31,7 +31,7 @@ const pageTitle = "About";
         </p>
       </div>
       <div class="h-max rounded-2xl py-8 px-6 bg-[#1D1D20] border-2 border-[#343437]">
-        <h3 class="text-3xl font-bold mb-4">Philosophy and Vision</h3>
+        <h2 class="text-3xl font-bold mb-4">Philosophy and Vision</h2>
         <p class="text-textSecondary font-medium mb-4">
           We believe in democratizing STEM education in Malaysia through open-source resources and
           community collaboration. By fostering a supportive and inclusive environment, we aim to
@@ -70,11 +70,17 @@ const pageTitle = "About";
         class="max-w-[50rem] sm:mx-auto grid sm:grid-cols-2 bg-[#ffffff14] rounded-xl p-6 gap-5 mx-5"
       >
         <div class="flex justify-center items-center p-4">
-          <img class="rounded-xl" width="100%" src="/assets/founder.jpg" alt="founder" />
+          <img
+            loading="lazy"
+            class="rounded-xl"
+            width="100%"
+            src="/assets/founder.jpg"
+            alt="founder"
+          />
         </div>
         <div class="grid items-center">
           <div>
-            <h3 class="text-3xl md:text-4xl font-bold mb-6">Muhammad Aidil Iskandar</h3>
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Muhammad Aidil Iskandar</h2>
             <span class="font-medium rounded-full py-2 px-4 bg-emerald-400/10 text-emerald-400"
               >Founder</span
             >
@@ -83,7 +89,11 @@ const pageTitle = "About";
               brighter future for all.
             </p>
             <div class="mt-4 flex flex-wrap gap-4">
-              <a href="https://www.linkedin.com/in/muhammad-aidil-iskandar/" target="_blank">
+              <a
+                aria-label="social-links"
+                href="https://www.linkedin.com/in/muhammad-aidil-iskandar/"
+                target="_blank"
+              >
                 <svg
                   class="hover:text-emerald-400"
                   xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +108,7 @@ const pageTitle = "About";
                   ></path>
                 </svg>
               </a>
-              <a href="https://aidiliskandar.netlify.app" target="_blank">
+              <a aria-label="social-links" href="https://aidiliskandar.netlify.app" target="_blank">
                 <svg
                   class="hover:text-emerald-400"
                   xmlns="http://www.w3.org/2000/svg"

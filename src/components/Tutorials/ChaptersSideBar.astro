@@ -7,7 +7,6 @@ const allTutorials = await getCollection("tutorials");
 
 const tutorial = allTutorials.filter(({ data }) => data.tutorialName === currentTutorial);
 const tutorialBasicData = allTutorialsBasicData.find(({ data }) => data.name === currentTutorial);
-console.log(allTutorials);
 ---
 
 <label
