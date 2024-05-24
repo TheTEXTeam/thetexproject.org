@@ -1,0 +1,20 @@
+---
+const { title, number, description } = Astro.props;
+---
+
+<div class="main-layout pt-40">
+  <div class="max-w-[45rem] mx-auto mb-10">
+    <span
+      class="cursor-default mx-auto mb-5 bg-emerald-400/10 text-emerald-400 border-2 border-emerald-400 w-14 h-14 flex justify-center items-center rounded-full font-extrabold text-2xl ring-1 ring-inset ring-emerald-400/20 hover:bg-emerald-400/10 hover:text-emerald-300 hover:ring-emerald-300"
+      >{number}</span
+    >
+    <h1 class="text-3xl font-Orbitron font-extrabold text-center mb-4">
+      {title}
+    </h1>
+
+    <p class="font-semibold text-center tracking-wider text-textSecondary">
+      {description}
+    </p>
+  </div>
+  <slot />
+</div>

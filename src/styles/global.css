@@ -50,6 +50,9 @@
 .hero {
   background-image: url("/assets/hero-background.svg");
 }
+.welcome-to-team {
+  background-image: url("/assets/welcome-to-the-tex-team-bg.svg");
+}
 .btn {
   @apply flex overflow-hidden font-medium transition rounded-full py-3 px-6 bg-emerald-400/10 text-emerald-400 ring-1 ring-inset ring-emerald-400/20 hover:bg-emerald-400/10 hover:text-emerald-300 hover:ring-emerald-300;
 }

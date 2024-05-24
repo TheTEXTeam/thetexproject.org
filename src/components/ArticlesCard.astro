@@ -20,7 +20,7 @@ const { articleData } = Astro.props;
     </p>
     <div class="mt-6 flex flex-wrap gap-4">
       {
-        articleData.topics.map((topic) => {
+        articleData.topics.map((topic: string) => {
           return (
             <span class="w-max py-2 px-4 rounded-lg bg-emerald-400/10 text-emerald-400">
               {topic}
