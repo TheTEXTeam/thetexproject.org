@@ -1,0 +1,49 @@
+---
+import ArticlesCard from "@/components/ArticlesCard.astro";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { filterArticles } from "@/libs/utils";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const allArticles = await getCollection("articles");
+  const allTopics = [...new Set(allArticles.map((article) => article.data.topics).flat())];
+
+  return allTopics.map((topic) => {
+    return {
+      params: { topic },
+      props: { allArticles },
+    };
+  });
+}
+
+const { allArticles } = Astro.props;
+const { topic } = Astro.params;
+const pageTitle = topic;
+
+const articlesByTopic = filterArticles(
+  allArticles.filter(({ data }) => data.topics.includes(topic)),
+  "recent",
+  null
+);
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <section class="pt-20">
+    <div class="main-layout">
+      <div class="mb-16">
+        <h2 class="font-Orbitron text-4xl font-bold text-center mb-3">
+          Articles related to "{topic}"
+        </h2>
+      </div>
+    </div>
+  </section>
+  <section>
+    <div class="grid gap-5 max-w-[50rem] mx-auto mb-12 px-4">
+      {
+        articlesByTopic.map(({ data }) => {
+          return <ArticlesCard articleData={data} />;
+        })
+      }
+    </div>
+  </section>
+</BaseLayout>

@@ -32,6 +32,18 @@
   font-style: normal;
 }
 
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #2d2e34;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #33cb936f;
+  border-radius: 0.75rem;
+  border: 3px solid #2d2e34;
+}
+
 .main-layout {
   @apply px-4 max-w-[65rem] mx-auto;
 }
@@ -40,4 +52,7 @@
 }
 .btn {
   @apply flex overflow-hidden font-medium transition rounded-full py-3 px-6 bg-emerald-400/10 text-emerald-400 ring-1 ring-inset ring-emerald-400/20 hover:bg-emerald-400/10 hover:text-emerald-300 hover:ring-emerald-300;
+}
+.btn-disabled {
+  @apply flex overflow-hidden font-medium transition rounded-full py-3 px-6 bg-[#343437] text-[#898989] cursor-not-allowed;
 }

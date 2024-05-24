@@ -1,0 +1,41 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import WantToContribute from "@/components/WantToContribute.astro";
+import ChaptersSideBar from "@/components/Tutorials/ChaptersSideBar.astro";
+import "@/styles/contents.css";
+
+export async function getStaticPaths() {
+  const allTutorialData = await getCollection("tutorials");
+  const tutorialsBasicDataFresh = await getCollection("tutorialsBasicData");
+  return allTutorialData.map((tutorialData) => {
+    return {
+      params: { slug: tutorialData.data.url },
+      props: { tutorialData, tutorialsBasicDataFresh },
+    };
+  });
+}
+
+const { tutorialData, tutorialsBasicDataFresh } = Astro.props;
+
+const { Content } = await tutorialData.render();
+const pageTitle = `${tutorialData.data.title} - ${tutorialData.data.tutorialName}`;
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <div class="relative main-layout flex justify-center mx-auto px-4">
+    <ChaptersSideBar currentTutorial={tutorialData.data.tutorialName} />
+    <div class="flex-auto max-w-2xl min-w-0 px-4 sm:pl-8 py-10 lg:max-w-none lg:pr-0">
+      <article>
+        <div>
+          <p class="text-base font-medium text-textSecondary mb-1">{tutorialData.data.chapter}</p>
+          <h1 class="text-4xl font-bold tracking-tight">{tutorialData.data.title}</h1>
+        </div>
+        <main class="mt-6 content grid gap-6 text-lg">
+          <Content />
+        </main>
+      </article>
+      <WantToContribute />
+    </div>
+  </div>
+</BaseLayout>

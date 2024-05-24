@@ -1,0 +1,64 @@
+---
+import BaseLayout from "@/layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import { formatDate } from "@/libs/utils";
+import "@/styles/contents.css";
+import WantToContribute from "@/components/WantToContribute.astro";
+
+export async function getStaticPaths() {
+  const allArticles = await getCollection("articles");
+  return allArticles.map((allArticles) => {
+    return {
+      params: { slug: allArticles.data.url },
+      props: { allArticles },
+    };
+  });
+}
+
+const { allArticles } = Astro.props;
+const { Content } = await allArticles.render();
+const pageTitle = allArticles.data.title;
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <section class="pt-12 pb-20 px-4">
+    <div class="max-w-[50rem] mx-auto mb-8">
+      <div class="flex justify-center mb-4">
+        <div
+          class="bg-[#1D1D20] border-2 border-[#343437] rounded-xl py-3 px-6 flex gap-2 sm:gap-5 flex-wrap justify-center text-sm"
+        >
+          <a
+            href={`/learn/articles/authors/${allArticles.data.author}`}
+            class="hover:text-emerald-400 font-semibold"
+          >
+            {allArticles.data.author}
+          </a>
+          <time class="text-textSecondary">{formatDate(allArticles.data.pubDate)}</time>
+        </div>
+      </div>
+      <h1
+        class="font-Orbitron text-center text-4xl md:text-5xl md:leading-snug font-bold mb-6 px-4"
+      >
+        {allArticles.data.title}
+      </h1>
+      <div class="flex gap-3 justify-center">
+        {
+          allArticles.data.topics.map((topic) => {
+            return (
+              <a
+                href={`/learn/articles/topics/${topic}`}
+                class="text-sm w-max py-2 px-4 rounded-lg  bg-emerald-400/10 text-emerald-400 ring-1 ring-inset ring-emerald-400/20 hover:bg-emerald-400/10 hover:text-emerald-300 hover:ring-emerald-300"
+              >
+                {topic}
+              </a>
+            );
+          })
+        }
+      </div>
+    </div>
+    <main class="max-w-[50rem] mx-auto mt-6 content grid gap-6 text-lg px-4">
+      <Content />
+      <WantToContribute />
+    </main>
+  </section>
+</BaseLayout>
