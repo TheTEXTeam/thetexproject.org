@@ -1,9 +1,11 @@
 ---
 import BaseLayout from "@/layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
 import WantToContribute from "@/components/WantToContribute.astro";
 import ChaptersSideBar from "@/components/Tutorials/ChaptersSideBar.astro";
+import TutorialPagination from "@/components/Tutorials/TutorialPagination.astro";
+
 import "@/styles/contents.css";
+import { getCollection } from "astro:content";
 
 export async function getStaticPaths() {
   const allTutorialData = await getCollection("tutorials");
@@ -34,6 +36,7 @@ const pageTitle = `${tutorialData.data.title} - ${tutorialData.data.tutorialName
           <Content />
         </main>
       </article>
+      <TutorialPagination currentOrder={tutorialData.data.order} />
       <WantToContribute />
     </div>
   </div>

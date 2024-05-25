@@ -41,14 +41,14 @@ const tutorialBasicData = allTutorialsBasicData.find(({ data }) => data.name ===
         tutorialBasicData?.data.chapters.map((chapter) => {
           return (
             <li>
-              <h3 class="font-semibold tracking-tight">{chapter}</h3>
-              <ul role="list" class="pl-3 mt-3 space-y-2">
+              <h3 class="font-semibold text-base tracking-tight">{chapter}</h3>
+              <ul role="list" class="pl-4 mt-3 space-y-2">
                 {tutorial.map(({ data }) => {
                   return (
                     <li>
                       <a
                         href={`/learn/tutorials/${data.url}`}
-                        class="text-textSecondary hover:text-themePrimary"
+                        class="text-textSecondary font-medium hover:text-themePrimary"
                       >
                         {data.chapter === chapter && data.title}
                       </a>

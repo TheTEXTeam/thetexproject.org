@@ -11,7 +11,7 @@ export default {
         bodyColor: "#18181B",
         textPrimary: "#FFFFFF",
         textSecondary: "#97979F",
-        textContent: "#B7B7B7",
+        textContent: "#c3c3c3",
         themePrimary: "#33CB94",
       },
     },

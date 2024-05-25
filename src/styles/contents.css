@@ -1,6 +1,6 @@
 /* Tutorial Content Styling */
 .content > h2 {
-  @apply text-2xl font-bold;
+  @apply text-3xl font-bold mt-4;
 }
 
 .content > p {
@@ -12,22 +12,19 @@
 }
 
 .content > ul {
-  @apply list-none ml-10;
+  @apply list-disc ml-10 text-textContent font-medium;
 }
 
-.content > ol {
-  margin-bottom: 0.5em;
-  margin-left: 2.5em;
-}
-
-.content > li {
-  margin-bottom: 0.5em;
-}
-
-.content > pre code {
-  font-family: "IBM Plex Mono", monospace !important;
+pre.astro-code.one-dark-pro {
+  background-color: #171b23 !important;
+  padding: 1em !important;
+  border: 1px solid white;
 }
 
 .content > blockquote {
   @apply bg-[#1D1D20] border-2 border-[#343437] p-4 border-l-8 border-l-emerald-400;
+}
+
+em {
+  @apply mr-1;
 }
