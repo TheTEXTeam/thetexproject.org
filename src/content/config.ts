@@ -7,6 +7,7 @@ const tutorials = defineCollection({
     title: z.string(),
     url: z.string(),
     chapter: z.string(),
+    order: z.number(),
   }),
 });
 

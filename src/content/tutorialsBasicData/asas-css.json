@@ -1,8 +1,0 @@
-{
-  "name": "Asas CSS",
-  "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente facere quisquam nisi, maiores adipisci ipsam.",
-  "level": "Intermediate",
-  "chapters": ["Pengenalan kepada CSS", "Layout"],
-  "url": "asas-css/apa-itu-css",
-  "icon": "css"
-}

@@ -1,0 +1,48 @@
+---
+import { getCollection } from "astro:content";
+const { currentOrder } = Astro.props;
+
+const allTutorials = await getCollection("tutorials");
+
+const previousTutorial = allTutorials.filter(({ data }) => data.order === currentOrder - 1);
+const nextTutorial = allTutorials.filter(({ data }) => data.order === currentOrder + 1);
+---
+
+<div class="mt-10 grid grid-cols-2 border-y-[1px] border-y-[#343437] py-4">
+  {
+    currentOrder != 1 && (
+      <a
+        class="hover:text-emerald-400 flex items-center gap-4 px-4 "
+        href={`/learn/tutorials/${previousTutorial[0].data.url}`}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24">
+          <rect width="24" height="24" fill="none" />
+          <path fill="currentColor" fill-rule="evenodd" d="m15 4l2 2l-6 6l6 6l-2 2l-8-8z" />
+        </svg>
+        <span class="text-sm md:text-lg">{previousTutorial[0].data.title}</span>
+      </a>
+    )
+  }
+  {currentOrder == 1 && <div />}
+  {
+    nextTutorial[0] != undefined && (
+      <a
+        href={`/learn/tutorials/${nextTutorial[0].data.url}`}
+        class="px-4 text-end flex justify-end hover:text-emerald-400 gap-4 items-center border-l-[1px] border-l-[#343437]"
+      >
+        <span class="text-sm md:text-lg">{nextTutorial[0].data.title}</span>
+        <svg
+          class="rotate-180"
+          xmlns="http://www.w3.org/2000/svg"
+          width="2em"
+          height="2em"
+          viewBox="0 0 24 24"
+        >
+          <rect width="24" height="24" fill="none" />
+          <path fill="currentColor" fill-rule="evenodd" d="m15 4l2 2l-6 6l6 6l-2 2l-8-8z" />
+        </svg>
+      </a>
+    )
+  }
+  {nextTutorial[0] == undefined && <div />}
+</div>
