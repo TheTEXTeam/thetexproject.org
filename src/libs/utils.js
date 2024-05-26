@@ -35,3 +35,7 @@ export function filterArticles(allArticles, filterType, filterProp) {
     return allArticles.filter((article) => article.data.author === filterProp);
   }
 }
+
+export function sortChapters(tutorial) {
+  return tutorial.sort((a, b) => a.data.order - b.data.order);
+}

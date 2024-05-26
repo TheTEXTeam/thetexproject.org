@@ -18,7 +18,12 @@
 pre.astro-code.one-dark-pro {
   background-color: #171b23 !important;
   padding: 1em !important;
-  border: 1px solid white;
+  border: 1px solid #343437;
+  border-radius: 0.75rem;
+}
+
+code {
+  background-color: #171b23 !important;
 }
 
 .content > blockquote {
@@ -27,4 +32,12 @@ pre.astro-code.one-dark-pro {
 
 em {
   @apply mr-1;
+}
+
+.content > img {
+  @apply mx-auto border-2 border-[#343437] rounded-xl;
+}
+
+.content > .img-desc {
+  @apply mt-[-2rem] text-center text-sm font-medium;
 }

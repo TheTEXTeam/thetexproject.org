@@ -1,11 +1,14 @@
 ---
 import { getCollection } from "astro:content";
+import { sortChapters } from "@/libs/utils.js";
 
 const { currentTutorial } = Astro.props;
 const allTutorialsBasicData = await getCollection("tutorialsBasicData");
 const allTutorials = await getCollection("tutorials");
 
-const tutorial = allTutorials.filter(({ data }) => data.tutorialName === currentTutorial);
+const tutorial = sortChapters(
+  allTutorials.filter(({ data }) => data.tutorialName === currentTutorial)
+);
 const tutorialBasicData = allTutorialsBasicData.find(({ data }) => data.name === currentTutorial);
 ---
 
