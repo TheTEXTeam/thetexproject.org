@@ -2,7 +2,7 @@
   "name": "Asas HTML",
   "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente facere quisquam nisi, maiores adipisci ipsam.",
   "level": "Beginner",
-  "chapters": ["Pengenalan kepada HTML", "Elemen teks"],
+  "chapters": ["Pengenalan kepada HTML", "Elemen dan Tag"],
   "url": "asas-html/apa-itu-html",
   "icon": "html"
 }

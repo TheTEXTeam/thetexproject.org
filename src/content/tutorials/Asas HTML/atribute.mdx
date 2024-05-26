@@ -1,0 +1,46 @@
+---
+tutorialName: Asas HTML
+title: HTML Attribute
+url: asas-html/html-attribute
+chapter: Elemen dan Tag
+order: 6
+---
+
+_HTML attribute_ adalah ciri-ciri atau sifat-sifat yang tambahan bagi elemen untuk memberikan maklumat tambahan atau mengubah cara elemen tersebut dipaparkan atau berfungsi.
+
+Attribute biasanya ditulis dalam _opening tag_ dan terdiri daripada nama _attribute_ dan nilai _attribute_ yang dipisahkan oleh simbol sama dengan `(=)`.
+
+## Sintaks asas bagi _HTML attribute_
+
+Berikut adalah struktur asas bagaimana atribut ditulis dalam tag HTML:
+
+```html
+<elemen nama_attribute="nilai_attribute">Isi</elemen>
+```
+
+Salah satu contoh elemen yang memerlukan penggunaan _attribute_ adalah _link_. _Link_ boleh ditulis menggunakan tag `<a>`. _Attribute_ yang perlu digunakan di dalam _opening tag_ bagi tag `<a>` ialah `href`. _Attribute_ ini digunakan untuk menentukan _URL_ destinasi bagi elemen link tersebut.
+
+```html
+<a href="https://www.example.com">Klik di sini</a>
+```
+
+<img loading="lazy" src="/contents/tutorials/asas-html/a-tag.gif" alt="tag a" width="500" class="mb-4" />
+
+Terdapat _attribute_ yang ada pada semua jenis elemen dan ada juga _attribute_ yang khas untuk sesetengah elemen. Attribute `href` merupakan _attribute_ khas yang hanya ada pada elemen link atau tag `<a>`.
+
+## Contoh-contoh _attribute_ lain
+
+terdapat 3 _attribute_ yang ada pada semua elemen dan yang banyak digunakan.
+- `style`
+- `class`
+- `id`
+
+_Attribute_ `style` digunakan untuk _styling_ elemen. _Attribute_ ini boleh digunakan untuk mengubah warna teks, _warna background_, saiz teks, dan banyak lagi. Tetapi, untuk anda menambahkan _style_ pada elemen, anda perlu tahu satu bahasa lain iaitu _Cascading Style Sheet_ atau **CSS**. Kita tidak akan bincangkan CSS dalam tutorial ini. Tapi untuk anda lebih faham, ini adalah contoh penggunaan _attribute_ `style`.
+
+```html
+<h1 style="color: red;">Welcome to The TEX Project!</h1>
+```
+
+<img loading="lazy" src="/contents/tutorials/asas-html/attribute-style.png" alt="attribute style" width="500" class="mb-4" />
+
+_Attribute_ `id` dan `class` pula digunakan untuk menandakan sesuatu elemen bagi memudahkan proses integrasi dengan fail-fail Javascript dan CSS. Dalam tutorial ini, kita tidak akan gunakan kedua-dua _attribute_ ini, tetapi akan digunakan dalam tutorial Javascript dan CSS.
