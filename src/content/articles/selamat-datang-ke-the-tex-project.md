@@ -1,15 +1,15 @@
 ---
 title: 'Selamat Datang Ke The TEX Project!'
-pubDate: 2017-05-10
+pubDate: 2024-05-04
 description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum ipsum aliquam explicabo repudiandae animi porro. Quasi laboriosam similique, quo aperiam incidunt aut magni itaque saepe'
-author: 'Aidil Iskandar'
-topics: ['Programming','Astro Js']
+author: 'The TEX Team'
+topics: ['TheTEXProject']
 url: selamat-datang-ke-the-tex-project
 ---
 
 Dalam era kemajuan teknologi dan inovasi yang pesat ini, kepentingan pendidikan STEM (Sains, Teknologi, Kejuruteraan, dan Matematik) tidak boleh dipertikaikan lagi. Menyedari keperluan kritikal untuk melengkapkan belia Malaysia dengan kemahiran dan pengetahuan, **The TEX Project** muncul sebagai satu inisiatif bagi menangani keperluan tersebut.
 
-<img class="img-content" src="/articles-assets/selamat-datang-ke-the-tex-project/selamat-datang-ke-the-tex-project-1.png" />
+<img class="img-content" src="/contents/articles/selamat-datang-ke-the-tex-project/1.png" width="500" />
 <p class="img-alt">Sumber: Bernama</p>
 
 Seperti yang dinyatakan oleh Perdana Menteri, penurunan minat rakyat Malaysia dalam bidang STEM amat membimbangkan. Perkara ni terjadi disebabkan banyak faktor seperti peluang pekerjaan yang terhad dan tawaran gaji yang rendah. Tapi, tak dinafikan juga yang orang muda kurang berminat dengan bidang STEM kerana kurangnya pendedahan kepada mereka.
