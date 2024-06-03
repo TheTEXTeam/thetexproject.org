@@ -41,3 +41,7 @@ em {
 .content > .img-desc {
   @apply mt-[-2rem] text-center text-sm font-medium;
 }
+
+.img-alt {
+  @apply text-center mt-[-15px] text-base;
+}

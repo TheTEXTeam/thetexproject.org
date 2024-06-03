@@ -1,0 +1,40 @@
+---
+tutorialName: Asas HTML
+title: Link
+url: asas-html/link
+chapter: Elemen dan Tag
+order: 7
+---
+
+Elemen _link_ dipaparkan menggunakan tag `<a>`. Anda sudah pun belajar tentang asas tag `<a>` dan attribute khas yang ada pada tag `<a>` iaitu `href`.
+
+```html
+<a href="https://www.example.com">Klik di sini</a>
+```
+
+<img loading="lazy" src="/contents/tutorials/asas-html/a-tag.gif" alt="tag a" width="500" class="mb-4" />
+
+di dalam _opening tag_ terdapat _attribute_ `href` untuk menentukan `URL` bagi elemen link tersebut.
+Di antara _opening_ dan _closing_ tag pula terdapat teks yang akan dipaparkan sebagai link.
+
+Tag `<a>` bukan sahaja boleh menjadi _link_ ke website lain, tetapi juga _page_ lain dalam website kita. Tindakan meletakkan link page lain dalam website kita sendiri dinamakan sebagai _routing._
+
+Dalam folder yang mengandungi fail HTML anda, buat satu lagi fail HTML dengan nama yang berlainan. Fail HTML lain yang ada di dalam _folder_ tersebut akan menjadi _page_ lain untuk website anda. 
+
+<img loading="lazy" src="/contents/tutorials/asas-html/routing-1.png" alt="routing" width="500" class="mb-4" />
+
+Anda boleh gunakan nama fail HTML sebagai _link_ ke _page_ bagi fail tersebut.
+
+```html
+<html>
+  <head>
+    <title>Home - The TEX Project</title>
+  </head>
+  <body>
+    <h1>The TEX Project</h1>
+    <a href="about.html">About Page</a>
+  </body>
+</html>
+```
+
+<img loading="lazy" src="/contents/tutorials/asas-html/routing-2.gif" alt="routing" width="500" class="mb-4" />

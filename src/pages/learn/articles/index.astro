@@ -2,7 +2,7 @@
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import ArticlesCard from "@/components/ArticlesCard.astro";
 import { getCollection } from "astro:content";
-import { filterArticles } from "@/libs/utils";
+import { filterArticles } from "@/lib/utils";
 
 const allArticlesFresh = await getCollection("articles");
 const allArticles = await filterArticles(allArticlesFresh, "recent", null);

@@ -25,7 +25,10 @@ const pageTitle = `${tutorialData.data.title} - ${tutorialData.data.tutorialName
 
 <BaseLayout pageTitle={pageTitle}>
   <div class="relative main-layout flex justify-center mx-auto px-4">
-    <ChaptersSideBar currentTutorial={tutorialData.data.tutorialName} />
+    <ChaptersSideBar
+      currentTutorial={tutorialData.data.tutorialName}
+      currentTitle={tutorialData.data.title}
+    />
     <div class="flex-auto max-w-2xl min-w-0 px-4 sm:pl-8 py-10 lg:max-w-none lg:pr-0">
       <article>
         <div>
@@ -37,7 +40,7 @@ const pageTitle = `${tutorialData.data.title} - ${tutorialData.data.tutorialName
         </main>
       </article>
       <TutorialPagination currentOrder={tutorialData.data.order} />
-      <WantToContribute />
+      <WantToContribute page="tutorial" />
     </div>
   </div>
 </BaseLayout>
