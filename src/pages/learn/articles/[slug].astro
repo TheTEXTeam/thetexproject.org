@@ -3,7 +3,7 @@ import BaseLayout from "@/layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import { formatDate } from "@/lib/utils";
 import "@/styles/contents.css";
-import WantToContribute from "@/components/WantToContribute.astro";
+import WantToContribute from "@/components/ui/WantToContribute.astro";
 
 export async function getStaticPaths() {
   const allArticles = await getCollection("articles");
